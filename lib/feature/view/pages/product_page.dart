@@ -54,18 +54,6 @@ class ProductPage extends StatelessWidget {
                           initialRating: product.rating,
                           maxRating: 5,
                         ),
-                        // Text(
-                        //   product.rating.toString(),
-                        //   style: const TextStyle(fontSize: 16),
-                        // ),
-                        // const Padding(
-                        //   padding: EdgeInsets.only(left: 4.0),
-                        //   child: Icon(
-                        //     Icons.star_purple500_outlined,
-                        //     color: Colors.amber,
-                        //     size: 16,
-                        //   ),
-                        // )
                       ],
                     ),
                   )
@@ -121,6 +109,27 @@ class ProductPage extends StatelessWidget {
                     style: const TextStyle(fontSize: 16),
                   )
                 ],
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 24, top: 32),
+              child: Row(
+                children: [
+                  Text(
+                    "Reviews",
+                    style: TextStyle(fontSize: 24, color: Colors.grey),
+                  ),
+                ],
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 24.0, top: 12),
+              child: Column(
+                children: product.reviews!.map((review) {
+                  return Row(
+                    children: [Text(review.comment.toString())],
+                  );
+                }).toList(),
               ),
             )
           ],
