@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:machinetest_trogun/feature/controller/product_controller.dart';
 import 'package:machinetest_trogun/feature/view/widgets/bottom_nav_bar.dart';
 import 'package:machinetest_trogun/feature/view/widgets/new_products.dart';
 import 'package:machinetest_trogun/feature/view/widgets/trending_products.dart';
+import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Get.put(ProductController());
+
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(

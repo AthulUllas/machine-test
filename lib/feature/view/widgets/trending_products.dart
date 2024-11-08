@@ -32,7 +32,7 @@ class TrendingProducts extends StatelessWidget {
             );
           }
 
-          final products = productController.products;
+          final products = productController.products.value;
 
           return ListView.builder(
             itemCount: trendingProducts.length,
